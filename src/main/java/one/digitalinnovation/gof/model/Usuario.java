@@ -1,9 +1,6 @@
 package one.digitalinnovation.gof.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Usuario {
@@ -13,14 +10,9 @@ public class Usuario {
     private Integer id;
 
     private String nome;
-    private String cep;
 
-    public Usuario() {}
-
-    public Usuario(String nome, String cep) {
-        this.nome = nome;
-        this.cep = cep;
-    }
+    @ManyToOne
+    private Endereco endereco;
 
     public String getNome() {
         return nome;
@@ -30,11 +22,11 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public String getCep() {
-        return cep;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setCep(String cep) {
-        this.cep = cep;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 }

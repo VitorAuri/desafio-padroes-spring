@@ -11,7 +11,7 @@ public interface UsuarioService {
 
     void inserir(Usuario usuario);
 
-    void atualizar(Integer id, Usuario usuario);
+    void atualizar(Integer id, String nome, String cep);
 
     void deletar(Integer id);
 
